@@ -1,0 +1,7 @@
+Daniel Kim
+
+How is this LWP library different from a real thread management library? 
+   This LWP library differs from a real thread management library in a few ways. First, the default scheduler is a non-preemptive round robin with no thread weights. Real thread management libraries implement various types of schedulers, in order to balance throughput, wait time, turnaround time, response time, and fairness. Second, lwp only allows for one argument per function. Some real thread managament libraries creates threads that support functions with multiple numbers of args, although . Third is 32 bit x86 support only. Lwp only supports this specific architecture, and other thread management libraries support multiple. 
+
+Name two ways in which this LWP library API could be improved.
+   The first is, as mentioned in the last question, supporting multiple types of architectures. If the library is only usable on outdated 32bit x86 machines, it's not very useful. Another way it could be improved is by giving the users some idea of how many threads they can start. One issue is that the user is basically not given any control as to how many threads they can create, since that limit is privately set within lwp.h.
